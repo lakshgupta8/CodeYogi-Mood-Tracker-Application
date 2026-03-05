@@ -1,0 +1,18 @@
+import { type FC, memo } from 'react';
+import { useSelector } from 'react-redux';
+import { happyCountSelector } from '../selectors';
+
+export interface HappyTrackerProps {
+    happyCount: number;
+}
+
+const HappyTracker: FC<HappyTrackerProps> = () => {
+    const happyCount = useSelector(happyCountSelector);
+    return (
+        <div className='bg-orange-700 px-8 py-4'>
+            Total happy points: {happyCount}
+        </div>
+    );
+};
+
+export default memo(HappyTracker);
