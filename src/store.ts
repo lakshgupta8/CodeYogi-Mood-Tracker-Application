@@ -1,27 +1,26 @@
-import { createStore, type Action } from "redux";
-import { HAPPY_BUTTON_CLICKED, SAD_BUTTON_CLICKED } from "./actions";
+import { createStore, type AnyAction } from "redux";
+import { sadnessReducer, initialSadState, type sadState } from "./reducers/sadnessReducer";
+import { happinessReducer, initialHappyState, type happyState } from "./reducers/happinessReducer";
 
-export type State = {
-    sadCount: number;
-    happyCount: number;
+export type Moment = {
+    intensity: number;
+    when: Date;
 }
 
-interface Actions extends Action {
-    payload: number;
+export type State = {
+    sad: sadState;
+    happy: happyState;
 }
 
 const initialState: State = {
-    sadCount: 0,
-    happyCount: 0
+    happy: initialHappyState,
+    sad: initialSadState
 }
 
-const reducer = (currentState: State = initialState, action: Actions): State => {
-    if (action.type === HAPPY_BUTTON_CLICKED) {
-        return { ...currentState, happyCount: currentState.happyCount + action.payload };
-    } else if (action.type === SAD_BUTTON_CLICKED) {
-        return { ...currentState, sadCount: currentState.sadCount + action.payload };
-    } else {
-        return currentState;
+const reducer = (currentState: State = initialState, action: AnyAction): State => {
+    return {
+        sad: sadnessReducer(currentState.sad, action),
+        happy: happinessReducer(currentState.happy, action)
     }
 }
 

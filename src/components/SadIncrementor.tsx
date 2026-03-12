@@ -8,7 +8,7 @@ const SadIncrementor: FC = () => {
   const dispatch = useDispatch();
 
   const increment = () => {
-    dispatch(sadButtonClicked(quantity));
+    dispatch(sadButtonClicked(quantity, new Date()));
   };
 
   return (

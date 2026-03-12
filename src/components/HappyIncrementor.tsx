@@ -8,7 +8,7 @@ const HappyIncrementor: FC = () => {
     const dispatch = useDispatch();
 
     const increment = () => {
-        dispatch(happyButtonClicked(quantity));
+        dispatch(happyButtonClicked(quantity, new Date()));
     };
 
     return (

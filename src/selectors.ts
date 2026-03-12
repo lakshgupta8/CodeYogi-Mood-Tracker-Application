@@ -1,5 +1,5 @@
 import type { State } from "./store";
 
-export const happyCountSelector = (state: State) => state.happyCount;
+export const happyMomentSelector = (state: State) => state.happy.happyMoments;
 
-export const sadCountSelector = (state: State) => state.sadCount;
+export const sadMomentSelector = (state: State) => state.sad.sadMoments;
