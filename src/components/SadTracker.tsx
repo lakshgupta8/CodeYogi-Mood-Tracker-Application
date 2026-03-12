@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { sadMomentSelector } from '../selectors';
 import type { Moment } from '../store';
 import { sadCleared } from '../actions';
+import Button from './Button';
 
 export interface SadTrackerProps {
     sadCount: number;
@@ -16,12 +17,11 @@ const SadTracker: FC<SadTrackerProps> = () => {
         <div className='bg-indigo-700 px-8 py-4 text-white'>
             <div className="flex justify-between items-center mb-4">
                 <h2 className="font-bold text-xl">Sad Moments</h2>
-                <button
+                <Button
                     onClick={() => dispatch(sadCleared())}
-                    className="bg-indigo-500 hover:bg-indigo-600 px-4 py-2 rounded font-semibold text-sm"
                 >
                     Clear
-                </button>
+                </Button>
             </div>
             {sadMoment.map((moment: Moment, index: number) => (
                 <div key={index}>

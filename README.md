@@ -1,6 +1,6 @@
 # Mood Tracker
 
-Mood Tracker is a simple application to demonstrate the use of Redux Toolkit for state management. This project is part of the CodeYogi Lecture 87.
+Mood Tracker is a simple application to demonstrate the use of Redux Toolkit for state management.
 
 ## Tech Stack
 
@@ -27,13 +27,10 @@ To run this project locally, follow these steps:
 
 ## Assignment Context
 
-This project is part of the CodeYogi Assignment series.
-Created as part of CodeYogi Video 87 Assignment.
+This project is part of the CodeYogi Non-Assignment Lectures after 87.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-**Note**: This is a learning project built as part of a coding course.
