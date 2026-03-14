@@ -1,31 +1,27 @@
 import { type Moment } from "../store";
 import { HAPPY_BUTTON_CLICKED, HAPPY_CLEARED } from "../actions";
 import type { AnyAction } from "redux";
+import { produce } from "immer";
 
-export type happyState = {
+export type State = {
     happyMoments: Moment[];
 }
 
-export const initialHappyState: happyState = {
+export const initialState: State = {
     happyMoments: []
 }
 
-export const happinessReducer = (currentState: happyState = initialHappyState, action: AnyAction) => {
+export const happinessReducer = (currentState: State = initialState, action: AnyAction): State => {
     switch (action.type) {
         case HAPPY_BUTTON_CLICKED: {
-            return {
-                ...currentState,
-                happyMoments: [
-                    ...currentState.happyMoments,
-                    { intensity: action.payload.intensity, when: action.payload.when }
-                ]
-            }
+            return produce(currentState, (draft: State) => {
+                draft.happyMoments.push(action.payload)
+            })
         }
         case HAPPY_CLEARED: {
-            return {
-                ...currentState,
-                happyMoments: []
-            }
+            return produce(currentState, (draft: State) => {
+                draft.happyMoments = []
+            })
         }
         default: {
             return currentState
