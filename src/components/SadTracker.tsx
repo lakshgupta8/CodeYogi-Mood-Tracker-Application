@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sadMomentSelector } from '../selectors';
+import { sadMomentSelector } from '../selectors/Mood';
 import type { Moment } from '../store';
-import { sadCleared } from '../actions';
+import { sadCleared } from '../actions/mood';
 import Button from './Button';
 
 export interface SadTrackerProps {

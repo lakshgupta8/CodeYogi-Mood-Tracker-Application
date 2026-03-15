@@ -1,6 +1,7 @@
 import { createStore, combineReducers } from "redux";
 import { sadnessReducer } from "./reducers/sadnessReducer";
 import { happinessReducer } from "./reducers/happinessReducer";
+import { productReducer } from "./reducers/productReducer";
 
 export type Moment = {
     intensity: number;
@@ -9,7 +10,8 @@ export type Moment = {
 
 const reducer = combineReducers({
     sad: sadnessReducer,
-    happy: happinessReducer
+    happy: happinessReducer,
+    products: productReducer,
 })
 
 export type State = ReturnType<typeof reducer>

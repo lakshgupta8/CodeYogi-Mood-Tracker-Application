@@ -1,7 +1,7 @@
 import { type FC, memo, useState } from 'react';
 import Button from './Button';
 import { useDispatch } from 'react-redux';
-import { sadButtonClicked } from '../actions';
+import { sadButtonClicked } from '../actions/mood';
 
 const SadIncrementor: FC = () => {
   const [quantity, setQuantity] = useState(1);

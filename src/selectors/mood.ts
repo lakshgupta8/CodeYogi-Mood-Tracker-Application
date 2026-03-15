@@ -1,4 +1,4 @@
-import type { State } from "./store";
+import type { State } from "../store";
 
 export const happyMomentSelector = (state: State) => state.happy.happyMoments;
 
