@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { happyMomentSelector } from '../selectors';
+import { happyMomentSelector } from '../selectors/Mood';
 import type { Moment } from '../store';
-import { happyCleared } from '../actions';
+import { happyCleared } from '../actions/mood';
 import Button from './Button';
 
 export interface HappyTrackerProps {

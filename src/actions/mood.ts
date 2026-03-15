@@ -1,4 +1,4 @@
-import type { Moment } from "./store"
+import type { Moment } from "../store"
 
 export const HAPPY_BUTTON_CLICKED = 'happy button clicked'
 export const SAD_BUTTON_CLICKED = 'sad button clicked'
