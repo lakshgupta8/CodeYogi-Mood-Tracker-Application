@@ -1,7 +1,7 @@
 import { type FC, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { happyMomentSelector } from '../selectors/mood';
-import type { Moment } from '../store';
+import type { Moment } from '../types';
 import { happyCleared } from '../actions/mood';
 import Button from './Button';
 

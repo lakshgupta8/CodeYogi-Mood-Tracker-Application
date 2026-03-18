@@ -1,7 +1,10 @@
 import type { State } from "../store";
 
-export const productSelector = (state: State) => state.products.products;
+export const productsSelector = (state: State) => {
+    const NormalisedProducts = state.products.products;
+    return Object.keys(NormalisedProducts).map(
+        productId => NormalisedProducts[+productId]
+    );
+}
 
-export const loadingSelector = (state: State) => state.products.loading;
-
-export const errorSelector = (state: State) => state.products.error;
+export const productsLoadingSelector = (state: State) => state.products.loading;
