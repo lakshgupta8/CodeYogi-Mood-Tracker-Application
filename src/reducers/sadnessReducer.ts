@@ -1,4 +1,4 @@
-import { type Moment } from "../store";
+import { type Moment } from "../types";
 import { SAD_BUTTON_CLICKED, SAD_CLEARED } from "../actions/mood";
 import type { AnyAction } from "redux";
 import { produce } from "immer";

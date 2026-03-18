@@ -1,7 +1,8 @@
+import type { FC } from "react";
 
-const Skeleton = () => {
+const Skeleton: FC<{ className?: string }> = ({ className = "" }) => {
     return (
-        <div className="flex flex-col space-y-6 bg-white dark:bg-gray-300 p-6 animate-pulse">
+        <div className={`flex flex-col space-y-6 bg-white dark:bg-gray-300 p-6 animate-pulse ${className}`}>
             {[...Array(5)].map((_, i) => (
                 <div key={i} className="flex justify-between items-center py-2">
                     <div className="flex items-center gap-4">
