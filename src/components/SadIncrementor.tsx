@@ -12,15 +12,15 @@ const SadIncrementor: FC = () => {
   };
 
   return (
-    <div>
-      <h3>Are you sad?</h3>
+    <div className='flex flex-col gap-2 bg-gray-200 my-2 p-4 font-bold text-center'>
+      <h3 className='my-2 text-indigo-700'>Are you sad?</h3>
       <input
-        className='border border-gray-300 rounded-md'
+        className='mx-auto p-2 border border-indigo-700 rounded-md w-1/4'
         type='number'
         value={quantity}
         onChange={(e) => setQuantity(Number(e.target.value))}
       />
-      <Button className='bg-indigo-700' onClick={increment}>Yes</Button>
+      <Button variant='secondary' onClick={increment}>Yes</Button>
     </div>
   );
 };

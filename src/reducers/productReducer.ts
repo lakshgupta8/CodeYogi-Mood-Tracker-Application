@@ -1,8 +1,9 @@
 import { LOAD_PRODUCTS, PRODUCTS_LOADED } from "../actions/product";
-import type { AnyAction } from "redux";
+import { ORDERS_LOADED, ORDER_DETAIL_LOADED } from "../actions/order";
+import type { Action } from "../actions";
 import { produce } from "immer";
-import type { NormalisedProduct, Order, Product } from "../types";
-import { ORDERS_LOADED } from "../actions/order";
+import { normalize, schema } from "normalizr";
+import type { NormalisedProduct, Product } from "../types";
 
 export type State = {
     products: NormalisedProduct;
@@ -14,7 +15,7 @@ const initialState: State = {
     loading: false
 };
 
-export const productReducer = (currentState: State = initialState, action: AnyAction): State => {
+export const productReducer = (currentState: State = initialState, action: Action): State => {
     switch (action.type) {
         case LOAD_PRODUCTS:
             return produce(currentState, (draft) => {
@@ -35,23 +36,26 @@ export const productReducer = (currentState: State = initialState, action: AnyAc
             });
         case ORDERS_LOADED:
             return produce(currentState, (draft) => {
-                const orders = action.payload;
-                const products = orders.reduce((
-                    previous: Product[],
-                    current: Order
-                ) => {
-                    return [...previous, ...current.products];
-                }, []);
+                const orderArr = action.payload;
 
-                const normalisedProducts = products.reduce((
-                    previous: NormalisedProduct,
-                    current: Product
-                ) => {
-                    return { ...previous, [current.id]: current };
-                }, {});
+                const productEntity = new schema.Entity("products");
+                const orderEntity = new schema.Entity("orders", {
+                    products: [productEntity],
+                });
 
-                draft.products = normalisedProducts;
+                const data = normalize(orderArr, [orderEntity]);
+
+                draft.products = { ...draft.products, ...data.entities.products };
             });
+        case ORDER_DETAIL_LOADED:
+            return produce(currentState, (draft) => {
+                const order = action.payload;
+                const productEntity = new schema.Entity("products");
+
+                const data = normalize(order.products, [productEntity]);
+
+                draft.products = { ...draft.products, ...data.entities.products };
+            })
         default:
             return currentState;
     }

@@ -12,15 +12,15 @@ const HappyIncrementor: FC = () => {
     };
 
     return (
-        <div>
-            <h3>Are you happy?</h3>
+        <div className='flex flex-col gap-2 bg-gray-200 my-2 p-4 font-bold text-center'>
+            <h3 className='my-2 text-orange-700'>Are you happy?</h3>
             <input
-                className='border border-gray-300 rounded-md'
+                className='mx-auto p-2 border border-orange-700 rounded-md w-1/4'
                 type='number'
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
             />
-            <Button className='bg-orange-700' onClick={increment}>Yes</Button>
+            <Button variant='tertiary' onClick={increment}>Yes</Button>
         </div>
     );
 };

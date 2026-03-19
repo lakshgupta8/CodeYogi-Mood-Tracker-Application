@@ -1,20 +1,18 @@
 import { type FC, memo } from "react";
 import HappyTracker from "../components/HappyTracker";
 import SadTracker from "../components/SadTracker";
-import HappyIncrementor from "../components/HappyIncrementor";
-import SadIncrementor from "../components/SadIncrementor";
 import { Link } from "react-router-dom";
 import Button from "../components/Button";
 
 export const HomePage: FC = () => {
     return (
         <div>
-            <HappyTracker happyCount={0} />
-            <SadTracker sadCount={0} />
-            <HappyIncrementor />
-            <SadIncrementor />
-            <div className="p-2"><Link to="/products"><Button>Products</Button></Link></div>
-            <div className="p-2"><Link to="/orders"><Button>Orders</Button></Link></div>
+            <div className="gap-4 grid grid-cols-2 mb-12">
+                <HappyTracker />
+                <SadTracker />
+            </div>
+            <Button className="m-2"><Link to="/products">Products</Link></Button>
+            <Button className="m-2"><Link to="/orders">Orders</Link></Button>
         </div>
     );
 };

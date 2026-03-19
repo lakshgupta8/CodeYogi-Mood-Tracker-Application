@@ -26,11 +26,11 @@ export const OrderListPage: FC = () => {
             {ordersLoading && <Skeleton className='w-full h-screen' />}
             {orders.map((order) => (
                 <div className='bg-gray-200 m-2 p-2 rounded-md font-medium text-lg' key={order.id}>
-                    <Link to={`/orders/${order.id}`} >
+                    <Link to={`/orders/${order.id}`} className='text-indigo-700' >
                         <p>Order number: {order.id}</p>
-                        <p>Total: {order.total}</p>
-                        <p>Products: {order.totalProducts}</p>
                     </Link>
+                    <p>Total: {order.total}</p>
+                    <p>Products: {order.totalProducts}</p>
                 </div>
             ))}
         </div>
