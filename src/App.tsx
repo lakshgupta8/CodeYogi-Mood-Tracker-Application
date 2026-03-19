@@ -6,7 +6,7 @@ import { Routes, Route } from "react-router-dom";
 
 function App() {
     return (
-        <div className="space-y-2 p-2">
+        <div className="p-2">
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/products" element={<ProductListPage />} />
