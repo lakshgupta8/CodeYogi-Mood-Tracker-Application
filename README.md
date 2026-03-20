@@ -9,21 +9,27 @@ Mood Tracker is a simple application to demonstrate the use of Redux Toolkit for
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Vite](https://vitejs.dev/)
 - [Redux Toolkit](https://redux-toolkit.js.org/)
+- [Axios](https://axios-http.com/)
+- [Normalizr](https://github.com/paularmstrong/normalizr)
+- [Reselect](https://github.com/reduxjs/reselect)
+- [Immer](https://immerjs.github.io/immer/)
+- [React Router](https://reactrouter.com/)
 
 ## Setup Instructions
 
 To run this project locally, follow these steps:
 
-1.  **Install Dependencies**
+1. **Install Dependencies**
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
-2.  **Start Development Server**
-    ```bash
-    npm run dev
-    ```
+2. **Start Development Server**
+
+   ```bash
+   npm run dev
+   ```
 
 ## Assignment Context
 

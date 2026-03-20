@@ -1,8 +1,8 @@
 import ProductListPage from "./pages/ProductListPage";
 import HomePage from "./pages/HomePage";
 import OrderListPage from "./pages/OrderListPage";
-import OrderDetailPage from "./pages/OrderDetailPage";
 import { Routes, Route } from "react-router-dom";
+import OrderDetailPage from "./pages/OrderDetailPageWithRedux";
 
 function App() {
     return (
