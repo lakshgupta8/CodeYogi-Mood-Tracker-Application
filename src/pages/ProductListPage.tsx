@@ -22,14 +22,14 @@ const ProductListPage: FC = () => {
 
     return (
         <div>
-            <Link to="/"><Button>Back</Button></Link>
+            <Button><Link to="/">Back</Link></Button>
             {loading && <Skeleton />}
             {products &&
                 products.map((product) => (
                     <div key={product.id}
                         className='bg-gray-200 m-2 p-2 rounded-md font-medium text-lg'
                     >
-                        {product.title} (Rs. {product.price})
+                        {product.title} ($ {product.price})
                     </div>
                 ))};
         </div>

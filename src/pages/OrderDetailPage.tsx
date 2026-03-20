@@ -30,7 +30,7 @@ export const OrderDetailPage: FC<OrderDetailPageProps> = ({
 
     return (
         <div>
-            <Link to="/orders"><Button>Back</Button></Link>
+            <Button><Link to="/orders">Back</Link></Button>
             <div className='bg-gray-200 m-2 p-2 rounded-md font-medium text-black text-lg'>
                 <p className='mb-4 font-bold text-indigo-700 text-3xl'>Order Detail Page for order {orderId}</p>
                 <p>Order number: {order.id}</p>
@@ -42,7 +42,7 @@ export const OrderDetailPage: FC<OrderDetailPageProps> = ({
                     {products.map((p) => (
                         <div key={p.id} className='flex justify-between bg-white shadow-sm m-2 p-2 rounded-md'>
                             <span>{p.title}</span>
-                            <span className='text-indigo-700'>Rs. {p.price}</span>
+                            <span className='text-indigo-700'>$ {p.price}</span>
                         </div>
                     ))}
                 </div>

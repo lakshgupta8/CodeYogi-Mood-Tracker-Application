@@ -22,7 +22,7 @@ export const OrderListPage: FC = () => {
 
     return (
         <div>
-            <Link to="/"><Button>Back</Button></Link>
+            <Button><Link to="/">Back</Link></Button>
             {ordersLoading && <Skeleton className='w-full h-screen' />}
             {orders.map((order) => (
                 <div className='bg-gray-200 m-2 p-2 rounded-md font-medium text-lg' key={order.id}>
