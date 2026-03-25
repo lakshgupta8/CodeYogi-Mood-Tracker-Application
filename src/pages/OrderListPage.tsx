@@ -2,15 +2,16 @@ import { type FC, memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loadOrdersAction, ordersLoadedAction } from '../actions/order';
 import axios from 'axios';
-import Skeleton from '../components/Skeleton';
 import { ordersSelector, orderLoadingSelector } from '../selectors/order';
 import { Link } from 'react-router-dom';
 import Button from '../components/Button';
+import OrderListItem from '../components/OrderListItem';
+import LoadingState from '../components/LoadingState';
 
 export const OrderListPage: FC = () => {
     const dispatch = useDispatch();
-    const orders = useSelector(ordersSelector);
-    const ordersLoading = useSelector(orderLoadingSelector);
+    const orders = useSelector(ordersSelector) as any[];
+    const ordersLoading = useSelector(orderLoadingSelector) as boolean;
 
     useEffect(() => {
         dispatch(loadOrdersAction());
@@ -18,21 +19,20 @@ export const OrderListPage: FC = () => {
         axios.get("https://dummyjson.com/carts").then((res) => {
             dispatch(ordersLoadedAction(res.data.carts));
         });
-    }, []);
+    }, [dispatch]);
 
     return (
-        <div>
-            <Button><Link to="/">Back</Link></Button>
-            {ordersLoading && <Skeleton className='w-full h-screen' />}
-            {orders.map((order) => (
-                <div className='bg-gray-200 m-2 p-2 rounded-md font-medium text-lg' key={order.id}>
-                    <Link to={`/orders/${order.id}`} className='text-indigo-700' >
-                        <p>Order number: {order.id}</p>
-                    </Link>
-                    <p>Total: {order.total}</p>
-                    <p>Products: {order.totalProducts}</p>
+        <div className="max-w-4xl mx-auto p-4">
+            <Button className="mb-6"><Link to="/">Back to Home</Link></Button>
+            <h1 className="text-3xl font-bold mb-6 text-gray-800">Your Orders</h1>
+
+            <LoadingState isLoading={ordersLoading} skeletonClassName='w-full h-[400px]'>
+                <div className="flex flex-col gap-1">
+                    {orders.map((order) => (
+                        <OrderListItem key={order.id} order={order} />
+                    ))}
                 </div>
-            ))}
+            </LoadingState>
         </div>
     );
 };
