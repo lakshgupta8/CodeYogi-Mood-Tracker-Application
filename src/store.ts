@@ -4,7 +4,7 @@ import { happinessReducer } from "./reducers/happinessReducer";
 import { productReducer } from "./reducers/productReducer";
 import { orderReducer } from "./reducers/orderReducer";
 
-const reducer = combineReducers({
+export const reducer = combineReducers({
     sad: sadnessReducer,
     happy: happinessReducer,
     products: productReducer,
