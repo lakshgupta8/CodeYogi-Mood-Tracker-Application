@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import OrderDetailPage from './OrderDetailPage';
-import { RouterDecorator } from '../stories/RouterDecorator';
+import { RouterDecorator } from '../Stories/RouterDecorator';
 
 const meta: Meta<typeof OrderDetailPage> = {
   title: 'Pages/OrderDetailPage',

@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
-import { ordersMapSelector, orderProductsSelector } from '../selectors/order';
-import { orderDetailLoadedAction } from '../actions/order';
+import { ordersMapSelector, orderProductsSelector } from '../Selectors/order';
+import { orderDetailLoadedAction } from '../Actions/order';
 import type { State } from '../store';
-import OrderDetailPage, { type OrderDetailPageProps } from '../components/OrderDetailPage';
+import OrderDetailPage, { type OrderDetailPageProps } from '../Components/OrderDetailPage';
 
 const mapStateToProps = (state: State, ownProps: Partial<OrderDetailPageProps>) => {
     const orderId = +ownProps.orderId!;

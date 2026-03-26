@@ -1,11 +1,11 @@
 import { type FC, memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadProductsAction, productsLoadedAction } from '../actions/product';
+import { loadProductsAction, productsLoadedAction } from '../Actions/product';
 import axios from 'axios';
 
-import { productsLoadingSelector, productsSelector } from '../selectors/product';
-import ProductCard from '../components/ProductCard';
-import LoadingState from '../components/LoadingState';
+import { productsLoadingSelector, productsSelector } from '../Selectors/product';
+import ProductCard from '../Components/ProductCard';
+import LoadingState from '../Components/LoadingState';
 
 const ProductListPage: FC = () => {
     const dispatch = useDispatch();

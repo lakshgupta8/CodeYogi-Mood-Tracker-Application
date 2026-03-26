@@ -1,10 +1,10 @@
-import ProductListPage from "./pages/ProductListPage";
-import HomePage from "./pages/HomePage";
-import OrderListPage from "./pages/OrderListPage";
+import ProductListPage from "./Pages/ProductListPage";
+import HomePage from "./Pages/HomePage";
+import OrderListPage from "./Pages/OrderListPage";
 import { Routes, Route } from "react-router-dom";
-import { OrderDetailPageConnected } from "./pages/OrderDetailPageWithRedux";
-import UserPage from "./pages/UserPage";
-import Layout from "./components/Layout";
+import { OrderDetailPageConnected } from "./Pages/OrderDetailPageWithRedux";
+import UserPage from "./Pages/UserPage";
+import Layout from "./Components/Layout";
 
 function App() {
     return (

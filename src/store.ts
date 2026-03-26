@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
-import { sadnessReducer } from "./reducers/sadnessReducer";
-import { happinessReducer } from "./reducers/happinessReducer";
-import { productReducer } from "./reducers/productReducer";
-import { orderReducer } from "./reducers/orderReducer";
-import { userReducer } from "./reducers/userReducer";
+import { sadnessReducer } from "./Reducers/sadnessReducer";
+import { happinessReducer } from "./Reducers/happinessReducer";
+import { productReducer } from "./Reducers/productReducer";
+import { orderReducer } from "./Reducers/orderReducer";
+import { userReducer } from "./Reducers/userReducer";
 import sagaMiddleware, { rootSaga } from "./Sagas";
 
 export const reducer = combineReducers({

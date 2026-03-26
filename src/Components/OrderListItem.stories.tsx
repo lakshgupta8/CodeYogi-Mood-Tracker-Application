@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import OrderListItem from './OrderListItem';
-import { RouterDecorator } from '../stories/RouterDecorator';
+import { RouterDecorator } from '../Stories/RouterDecorator';
 
 const meta: Meta<typeof OrderListItem> = {
   title: 'Components/OrderListItem',

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HappyTracker from './HappyTracker';
-import { ReduxDecorator } from '../stories/ReduxDecorator';
+import { ReduxDecorator } from '../Stories/ReduxDecorator';
 
 const meta: Meta<typeof HappyTracker> = {
   title: 'Components/HappyTracker',

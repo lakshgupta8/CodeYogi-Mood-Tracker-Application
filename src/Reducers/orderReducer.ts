@@ -1,5 +1,5 @@
-import { LOAD_ORDERS, ORDERS_LOADED, ORDER_DETAIL_LOADED } from "../actions/order";
-import type { Action } from "../actions";
+import { LOAD_ORDERS, ORDERS_LOADED, ORDER_DETAIL_LOADED } from "../Actions/order";
+import type { Action } from "../Actions";
 import { produce } from "immer";
 import type { NormalisedOrder, Order } from "../types";
 import { normalize, schema } from "normalizr";

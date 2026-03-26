@@ -1,11 +1,11 @@
 import { type FC, memo, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadOrdersAction, ordersLoadedAction } from '../actions/order';
+import { loadOrdersAction, ordersLoadedAction } from '../Actions/order';
 import axios from 'axios';
-import { ordersSelector, orderLoadingSelector } from '../selectors/order';
+import { ordersSelector, orderLoadingSelector } from '../Selectors/order';
 
-import OrderListItem from '../components/OrderListItem';
-import LoadingState from '../components/LoadingState';
+import OrderListItem from '../Components/OrderListItem';
+import LoadingState from '../Components/LoadingState';
 
 export const OrderListPage: FC = () => {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export const OrderListPage: FC = () => {
 
     return (
         <div className="py-8">
-            <h1 className="text-3xl font-extrabold mb-8 text-gray-900 border-b pb-4">Your Orders</h1>
+            <h1 className="mb-8 pb-4 border-b font-extrabold text-gray-900 text-3xl">Your Orders</h1>
 
             <LoadingState isLoading={ordersLoading} skeletonClassName='w-full h-[400px]'>
                 <div className="flex flex-col gap-1">

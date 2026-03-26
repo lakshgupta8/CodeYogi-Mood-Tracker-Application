@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import HappyIncrementor from './HappyIncrementor';
-import { ReduxDecorator } from '../stories/ReduxDecorator';
+import { ReduxDecorator } from '../Stories/ReduxDecorator';
 
 const meta: Meta<typeof HappyIncrementor> = {
   title: 'Components/HappyIncrementor',

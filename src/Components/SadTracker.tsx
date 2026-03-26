@@ -1,8 +1,8 @@
 import { type FC, memo } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sadMomentSelector } from '../selectors/mood';
+import { sadMomentSelector } from '../Selectors/mood';
 import type { Moment } from '../types';
-import { sadCleared } from '../actions/mood';
+import { sadCleared } from '../Actions/mood';
 import Button from './Button';
 import SadIncrementor from './SadIncrementor';
 

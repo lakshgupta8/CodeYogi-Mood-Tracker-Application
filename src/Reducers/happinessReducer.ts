@@ -1,5 +1,5 @@
 import { type Moment } from "../types";
-import { HAPPY_BUTTON_CLICKED, HAPPY_CLEARED } from "../actions/mood";
+import { HAPPY_BUTTON_CLICKED, HAPPY_CLEARED } from "../Actions/mood";
 import type { AnyAction } from "redux";
 import { produce } from "immer";
 

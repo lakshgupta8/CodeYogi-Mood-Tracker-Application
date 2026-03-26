@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import OrderListPage from './OrderListPage';
-import { ReduxDecorator } from '../stories/ReduxDecorator';
-import { RouterDecorator } from '../stories/RouterDecorator';
+import { ReduxDecorator } from '../Stories/ReduxDecorator';
+import { RouterDecorator } from '../Stories/RouterDecorator';
 
 const meta: Meta<typeof OrderListPage> = {
   title: 'Pages/OrderListPage',

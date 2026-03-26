@@ -1,7 +1,7 @@
 import { type FC, memo, useState } from 'react';
 import Button from './Button';
 import { useDispatch } from 'react-redux';
-import { happyButtonClicked } from '../actions/mood';
+import { happyButtonClicked } from '../Actions/mood';
 
 const HappyIncrementor: FC = () => {
     const [quantity, setQuantity] = useState(1);
@@ -15,7 +15,7 @@ const HappyIncrementor: FC = () => {
         <div className='flex flex-col gap-2 bg-gray-200 my-2 p-4 font-bold text-center'>
             <h3 className='my-2 text-orange-700'>Are you happy?</h3>
             <input
-                className='mx-auto p-2 border border-orange-700 rounded-md w-full sm:w-1/4 uppercase focus:ring-2 focus:ring-orange-500 outline-none'
+                className='mx-auto p-2 border border-orange-700 rounded-md outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-1/4 uppercase'
                 type='number'
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}

@@ -1,11 +1,9 @@
 import { type FC, memo, useEffect } from 'react';
-import UserList from "../components/UserList";
+import UserList from "../Components/UserList";
 import { connect } from 'react-redux';
-import type { State } from '../store';
-import { fetchUsersSelector } from '../selectors/user';
-import { fetchUsersRequestAction } from '../actions/user';
+import { fetchUsersAction } from '../Actions/user';
 import type { User } from '../types';
-
+import type { State } from '../store';
 
 interface UserPageProps {
     users: User[];
@@ -19,18 +17,18 @@ const UserPage: FC<UserPageProps> = ({ users, getUsers }) => {
 
     return (
         <div className="py-8">
-            <h1 className="text-3xl font-extrabold mb-8 text-gray-900 border-b pb-4">Our Users</h1>
+            <h1 className="mb-8 pb-4 border-b font-extrabold text-gray-900 text-3xl">Our Users</h1>
             <UserList users={users} />
         </div>
     );
 };
 
 const mapStateToProps = (state: State) => ({
-    users: fetchUsersSelector(state),
+    users: state.users,
 });
 
 const mapDispatchToProps = {
-    getUsers: fetchUsersRequestAction,
+    getUsers: fetchUsersAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(memo(UserPage));

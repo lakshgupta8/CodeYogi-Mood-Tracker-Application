@@ -1,6 +1,6 @@
-import { LOAD_PRODUCTS, PRODUCTS_LOADED } from "../actions/product";
-import { ORDERS_LOADED, ORDER_DETAIL_LOADED } from "../actions/order";
-import type { Action } from "../actions";
+import { LOAD_PRODUCTS, PRODUCTS_LOADED } from "../Actions/product";
+import { ORDERS_LOADED, ORDER_DETAIL_LOADED } from "../Actions/order";
+import type { Action } from "../Actions";
 import { produce } from "immer";
 import { normalize, schema } from "normalizr";
 import type { NormalisedProduct, Product } from "../types";
