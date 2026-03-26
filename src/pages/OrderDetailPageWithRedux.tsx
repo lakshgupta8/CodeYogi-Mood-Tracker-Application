@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import { ordersMapSelector, orderProductsSelector } from '../selectors/order';
 import { orderDetailLoadedAction } from '../actions/order';
 import type { State } from '../store';
-import OrderDetailPage, { type OrderDetailPageProps } from './OrderDetailPage';
+import OrderDetailPage, { type OrderDetailPageProps } from '../components/OrderDetailPage';
 
 const mapStateToProps = (state: State, ownProps: Partial<OrderDetailPageProps>) => {
     const orderId = +ownProps.orderId!;
@@ -20,5 +20,3 @@ export const OrderDetailPageConnected = connect(
     mapStateToProps,
     mapDispatchToProps
 )(OrderDetailPage);
-
-export const OrderDetailPageConnectedWithRouter = (OrderDetailPageConnected);

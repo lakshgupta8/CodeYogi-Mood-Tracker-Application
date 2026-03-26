@@ -32,3 +32,25 @@ export type Moment = {
     intensity: number;
     when: Date;
 }
+
+export interface User {
+    id: number;
+    firstName: string;
+    lastName: string;
+    age: number;
+    gender: string;
+    email: string;
+    phone: string;
+    username: string;
+    password: string;
+    birthDate: string;
+    address: Address;
+    role: "admin" | "user" | "moderator";
+}
+
+interface Address {
+    address: string;
+    city: string;
+    state: string;
+    country: string;
+}

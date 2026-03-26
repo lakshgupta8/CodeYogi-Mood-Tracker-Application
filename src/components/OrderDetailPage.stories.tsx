@@ -16,7 +16,7 @@ export const Loading: Story = {
     orderId: 1,
     order: undefined,
     products: [],
-    orderDetailLoaded: () => {},
+    orderDetailLoaded: () => { },
   } as any,
 };
 
@@ -34,6 +34,6 @@ export const WithData: Story = {
       { id: 101, title: 'Item A', price: 50.0 },
       { id: 102, title: 'Item B', price: 189.9 },
     ] as any,
-    orderDetailLoaded: () => {},
+    orderDetailLoaded: () => { },
   },
 };

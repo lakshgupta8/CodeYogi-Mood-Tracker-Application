@@ -1,18 +1,16 @@
 import { type FC, memo } from "react";
 import HappyTracker from "../components/HappyTracker";
 import SadTracker from "../components/SadTracker";
-import { Link } from "react-router-dom";
-import Button from "../components/Button";
+
 
 export const HomePage: FC = () => {
     return (
-        <div>
-            <div className="gap-4 grid grid-cols-2 mb-12">
+        <div className="py-8">
+            <h1 className="text-4xl font-extrabold text-gray-900 mb-8 text-center italic">How are you feeling today?</h1>
+            <div className="gap-8 grid grid-cols-1 md:grid-cols-2 mb-12">
                 <HappyTracker />
                 <SadTracker />
             </div>
-            <Button className="m-2"><Link to="/products">Products</Link></Button>
-            <Button className="m-2"><Link to="/orders">Orders</Link></Button>
         </div>
     );
 };
