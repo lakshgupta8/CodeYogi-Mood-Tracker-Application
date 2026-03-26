@@ -14,6 +14,9 @@ Mood Tracker is a simple application to demonstrate the use of Redux Toolkit for
 - [Reselect](https://github.com/reduxjs/reselect)
 - [Immer](https://immerjs.github.io/immer/)
 - [React Router](https://reactrouter.com/)
+- [Storybook](https://storybook.js.org/)
+- [Redux](https://redux.js.org/)
+- [Redux Saga](https://redux-saga.js.org/)
 
 ## Setup Instructions
 
@@ -33,7 +36,7 @@ To run this project locally, follow these steps:
 
 ## Assignment Context
 
-This project is part of the CodeYogi Non-Assignment Lectures after 87.
+This project is part of the CodeYogi Lectures from telegram bot after Video 87.
 
 ## License
 
